@@ -12,6 +12,8 @@ location = [(32.5266111,-92.72111,'Grambling State'),(30.0347413, -94.0837193,'5
 #Medellin, Antioquia, Colombia 6.2443695, -75.6512523
 #Morehouse, GA 33.7473° N, 84.4155° W
 
+key = "OPEkCl6kVz1sIOhKeGcpPTv5ZyIZ80NA"
+
 def __init__(self, lat, log, name):
   self.lat = lat
   self.log = log
@@ -36,7 +38,7 @@ import requests
 
 url='https://developer.climacell.co/v3/reference#get-realtime'
 
-payload = {apikey:"OPEkCl6kVz1sIOhKeGcpPTv5ZyIZ80NA","lat": self.lat[0],"log": self.log[1]
+payload = {"apikey": key, "lat": self.lat[0],"log": self.log[1]
 }
 
 response = requests.get(url, prams=payload)
