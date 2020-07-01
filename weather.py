@@ -14,33 +14,33 @@ location = [(32.5266111,-92.72111,'Grambling State'),(30.0347413, -94.0837193,'5
 
 key = "OPEkCl6kVz1sIOhKeGcpPTv5ZyIZ80NA"
 
-def __init__(self, lat, log, name):
-  self.lat = lat
-  self.log = log
-  self.name = name
 
-def __str__ (self):
-  return(f'{self.name} lattitude: {self.lat} self{self.log}')
-
-def create_placelist(list):
+def create_placelist(place_list):
   places = []
-  for city in location:
-    place = places(lat[0], log[1], city[2])
+  for city in place_list:
+    place = (city[0], city[1], city[2])
     places.append(place)
+  print(places)
   return places
 
-  places = create_placelist(place_list)
-  print(city[2])
 
+places = create_placelist(location)
+  
 
+def get_weather(locations):
 
-import requests
+  url='https://api.climacell.co/v3/weather/realtime'
 
-url='https://developer.climacell.co/v3/reference#get-realtime'
+  for location in locations:
 
-payload = {"apikey": key, "lat": locationlat[0],"log": locationlog[1], "city": locationcity[2]
-}
+    payload = {
+      "apikey": key, 
+      "lat": location[0],
+      "lon": location[1]
+    }
 
-response = requests.get(url, prams=payload)
+    response = requests.get(url, params=payload).json()
 
-print(response.text)
+    print(location[2],response["precipitation"])
+
+get_weather(places)
