@@ -38,7 +38,7 @@ import requests
 
 url='https://developer.climacell.co/v3/reference#get-realtime'
 
-payload = {"apikey": key, "lat": self.lat[0],"log": self.log[1]
+payload = {"apikey": key, "lat": locationlat[0],"log": locationlog[1], "city": locationcity[2]
 }
 
 response = requests.get(url, prams=payload)
