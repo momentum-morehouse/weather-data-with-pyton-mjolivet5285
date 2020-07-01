@@ -13,9 +13,9 @@ location = [(32.5266111,-92.72111,'Grambling State'),(30.0347413, -94.0837193,'5
 #Morehouse, GA 33.7473° N, 84.4155° W
 
 def __init__(self, lat, log, name):
-self.lat = lat
-self.log = log
-self.name = name
+  self.lat = lat
+  self.log = log
+  self.name = name
 
 def __str__ (self):
   return(f'{self.name} lattitude: {self.lat} self{self.log}')
@@ -23,23 +23,20 @@ def __str__ (self):
 def create_placelist(list):
   places = []
   for city in location:
-    place = places(city[0], city[1], city[2])
+    place = places(lat[0], log[1], city[2])
     places.append(place)
   return places
 
-places = create_placelist(place_list)
-
-print(places[0])
+  places = create_placelist(place_list)
+  print(city[2])
 
 
 
 import requests
 
-url =
-'https://developer.climacell.co/v3/reference#get-realtime'
-payload = {apikey:
-"OPEkCl6kVz1sIOhKeGcpPTv5ZyIZ80NA"
-, "lat":13.4523699 ,"log":-16.5892536
+url='https://developer.climacell.co/v3/reference#get-realtime'
+
+payload = {apikey:"OPEkCl6kVz1sIOhKeGcpPTv5ZyIZ80NA","lat": self.lat[0],"log": self.log[1]
 }
 
 response = requests.get(url, prams=payload)
